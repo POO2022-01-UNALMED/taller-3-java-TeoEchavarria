@@ -52,12 +52,12 @@ public class TV {
     }
     public void setCanal(int canal) {
         if (!this.estado) {return;}
-        if (canal < 1 || canal >= 120) {
+        if (canal < 1 || canal > 120) {
             return;
         }
         this.canal = canal;
     }
-
+    
     public static int getNumTV() {
         return TV.numTV;
     }
@@ -77,7 +77,6 @@ public class TV {
         int canalNuevo = this.canal + 1;
         this.setCanal(canalNuevo);
     }
-
     public void canalDown() {
         int canalNuevo = this.canal - 1;
         this.setCanal(canalNuevo);
@@ -90,10 +89,8 @@ public class TV {
         }
         this.setVolumen(volumenNuevo);
     }
-
     public void volumenDown() {
         int volumenNuevo = this.volumen - 1;
         this.setVolumen(volumenNuevo);
     }
-
 }
