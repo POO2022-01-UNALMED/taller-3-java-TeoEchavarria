@@ -4,43 +4,44 @@ public class Control {
     private TV tv;
 
     public void turnOn() {
-        this.tv.turnOn();
+        tv.turnOn();
     }
     public void turnOff() {
-        this.tv.turnOff();
+        tv.turnOff();
     }
 
     public void canalUp() {
-        int canalNuevo = this.tv.getCanal() + 1;
-        this.tv.setCanal(canalNuevo);
+        tv.canalUp();
     }
     public void canalDown() {
-        int canalNuevo = this.tv.getCanal() - 1;
-        this.tv.setCanal(canalNuevo);
+        tv.canalDown();
     }
 
     public void volumenUp() {
-        int volumenNuevo = this.tv.getVolumen() + 1;
-        this.tv.setVolumen(volumenNuevo);
+        tv.volumenUp();
     }
     public void volumenDown() {
-        int volumenNuevo = this.tv.getVolumen() - 1;
-        this.tv.setVolumen(volumenNuevo);
+        tv.volumenDown();
     }
 
     public void setCanal(int canal) {
-        this.tv.setCanal(canal);
+        tv.setCanal(canal);
     }
 
     public void enlazar(TV tv) {
         this.tv = tv;
-        this.tv.setControl(this);
+        tv.setControl(this);
     }
 
     public TV getTv() {
-        return this.tv;
+        return tv;
     }
     public void setTv(TV tv) {
-        this.tv = tv;
+        this.tv= tv;
     }
+<<<<<<< Updated upstream:src/main/java/taller3/televisores/Control.java
 }
+=======
+
+}
+>>>>>>> Stashed changes:src/main/java/taller3/televisores/control.java
