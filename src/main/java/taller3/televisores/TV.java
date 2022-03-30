@@ -7,6 +7,7 @@ public class TV {
     private int volumen = 1;
     private int precio = 500;
     private static int numTV = 0;
+    private Control control;
 
     public Marca getMarca() {
         return this.marca;
