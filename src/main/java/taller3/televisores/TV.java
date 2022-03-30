@@ -12,85 +12,80 @@ public class TV {
     public TV(Marca marca, boolean estado) {
         this.marca = marca;
         this.estado = estado;
-        TV.numTV += 1;
+        numTV++;
     }
 
     public Marca getMarca() {
-        return this.marca;
+        return marca;
     }
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
-
+    
     public Control getControl() {
-        return this.control;
+        return control;
     }
     public void setControl(Control control) {
         this.control = control;
     }
 
     public int getPrecio() {
-        return this.precio;
+        return precio;
     }
     public void setPrecio(int precio) {
         this.precio = precio;
     }
 
     public int getVolumen() {
-        return this.volumen;
+        return volumen;
     }
     public void setVolumen(int volumen) {
-        if (!this.estado) {return;}
-        if (volumen < 0 || volumen > 7) {
-            return;
-        }
-        this.volumen = volumen;
+        if (estado == true && volumen >=0 && volumen<=7)
+            this.volumen = volumen;
     }
 
     public int getCanal() {
-        return this.canal;
+        return canal;
     }
     public void setCanal(int canal) {
-        if (!this.estado) {return;}
-        if (canal < 1 || canal > 120) {
-            return;
-        }
-        this.canal = canal;
+        if (estado == true && canal >0 && canal<=120)
+            this.canal = canal;
     }
-    
+
+
+    public static void setNumTV(int num) {
+        numTV = num;
+    }
     public static int getNumTV() {
-        return TV.numTV;
+        return numTV;
     }
 
     public void turnOn() {
-        this.estado = true;
+        estado = true;
     }
     public void turnOff() {
-        this.estado = false;
+        estado = false;
     }
 
     public boolean getEstado() {
-        return this.estado;
+        return estado;
     }
 
     public void canalUp() {
-        int canalNuevo = this.canal + 1;
-        this.setCanal(canalNuevo);
+        if (estado == true && canal<120)
+            canal++;
     }
     public void canalDown() {
-        int canalNuevo = this.canal - 1;
-        this.setCanal(canalNuevo);
+        if (estado == true && canal>1)
+            canal--;
     }
-
+    
     public void volumenUp() {
-        int volumenNuevo = this.volumen + 1;
-        if (volumenNuevo > 7 || !this.estado){
-            return;
-        }
-        this.setVolumen(volumenNuevo);
+        if (estado == true && volumen<7)
+            volumen++;
     }
     public void volumenDown() {
-        int volumenNuevo = this.volumen - 1;
-        this.setVolumen(volumenNuevo);
+        if (estado == true && volumen>1)
+            volumen--;
     }
 }
