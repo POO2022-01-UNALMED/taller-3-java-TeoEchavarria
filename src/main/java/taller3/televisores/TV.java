@@ -1,12 +1,13 @@
 package taller3.televisores;
 
 public class TV {
+    public static int numTV;
+
     private Marca marca;
-    private boolean estado;
     private int canal = 1;
-    private int volumen = 1;
     private int precio = 500;
-    private static int numTV = 0;
+    private boolean estado;
+    private int volumen = 1;
     private Control control;
 
     public TV(Marca marca, boolean estado) {
@@ -79,7 +80,7 @@ public class TV {
         if (estado == true && canal>1)
             canal--;
     }
-    
+
     public void volumenUp() {
         if (estado == true && volumen<7)
             volumen++;
